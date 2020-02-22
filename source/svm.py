@@ -60,6 +60,16 @@ class GaussianKernel:
         return K
 
 class SVC:
+    '''
+    An implementation of SVM for multiclass classification based on One versus Rest.
+
+    NOTE: The problem of adapting SVMs to multiclass tasks is incomplete.
+            This implementation only follows the most used method,
+            which is "return the label that showed the highest value by the decision function".
+            The separate SVMs will learn different classification problems,
+            and there might not be any significance in comparing the outputs.
+            Also the percentage of the labels will be unbalanced when separating the targets to one and others.
+    '''
     def __init__(self, kernel, C):
         self.C = C
         self.kernel = kernel
@@ -111,6 +121,8 @@ class SVC:
     def multiclass_predict(self, X):
         '''
         prediction function for mutli-class classification
+
+        chooses predicted label by the maximum value of the decision function.
         '''
         # get value of decision function for each target
         val_dec_funcs = []
