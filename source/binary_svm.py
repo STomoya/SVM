@@ -1,5 +1,7 @@
-
-# code from https://qiita.com/amber_kshz/items/6a9f8b6dd857edffce58
+'''
+[CODE] https://qiita.com/amber_kshz/items/6a9f8b6dd857edffce58
+[REFERENCE] https://www.csie.ntu.edu.tw/~cjlin/papers/bottou_lin.pdf
+'''
 
 import numpy as np
 import time

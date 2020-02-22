@@ -83,20 +83,25 @@ class SVC:
         return predicted_ts
 
 if __name__=='__main__':
+    # testing on iris dataset with sklearn
     from kernels import LinearKernel, GaussianKernel
     from sklearn import datasets
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import confusion_matrix, classification_report
 
+    # data load
     iris = datasets.load_iris()
     X = iris['data']
     y = iris['target']
 
+    # data split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
+    # svc object
     svc = SVC(C=0.1, kernel=GaussianKernel(theta=0.5))
     svc.fit(X_train, y_train)
 
+    # prediction / evaluation
     prediction = svc.predict(X_test)
     print('confusion matrix')
     print(confusion_matrix(y_test, prediction))
