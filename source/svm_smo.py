@@ -1,9 +1,14 @@
 '''
 A Support Vector Machine implementation by Python.
+
 This implementation uses the Sequential Miminal Optimization (SMO) algorithm
 for solving the quadratic programming problem that appears in the optimization of the SVM.
+In many implementation for the SVM, uing SMO is popular.
+Still for implementing from scratch, it might be difficult to understand the mathematics of the algorithm...
+
 The working set is chosen by finding the maximal violating pair,
 which choses one data point from each class, that most violate the KKT conditions.
+(There are other ways to choses the working set.)
 
 All of the code for the binary class SV classifier is from https://qiita.com/amber_kshz/items/6a9f8b6dd857edffce58
 
