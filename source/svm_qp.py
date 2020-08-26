@@ -93,7 +93,7 @@ class QPSVC():
             scores = []
             for x in X:
                 scores.append(sum([a * sv_y * self.K(x, sv) for a, sv_y, sv in zip(self.a, self.sv_y, self.sv)]))
-            scores = np.array(scores)
+            scores = np.array(scores) + self.b
             return scores
 
     def predict(self, X):
